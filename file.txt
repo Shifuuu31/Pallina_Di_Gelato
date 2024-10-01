@@ -1,0 +1,16 @@
+Product:
+    -id
+	-Title
+	-Descrption
+    -Image Urls
+	-Price
+	-Category
+    -Publish Date
+	-New Product bool
+Category []
+
+````
+
+
+
+•
