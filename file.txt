@@ -1,16 +1,4 @@
-Product:
-    -id
-	-Title
-	-Descrption
-    -Image Urls
-	-Price
-	-Category
-    -Publish Date
-	-New Product bool
-Category []
-
-````
-
-
-
-•
+server details:
+	status: [1m[92m• Live[0m
+	localhost:8080
+Parsed Categories: [{MatchedProducts:[] MatchedCategory:{Title:Ice Cream ImageURL:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s}} {MatchedProducts:[] MatchedCategory:{Title:Frozen Yogurt ImageURL:https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1029452_10-563fda8.jpg}} {MatchedProducts:[] MatchedCategory:{Title:Sorbet ImageURL:https://www.lecremedelacrumb.com/wp-content/uploads/2014/06/raspberry-sorbet-1.jpg}} {MatchedProducts:[] MatchedCategory:{Title:Gelato ImageURL:https://emmaduckworthbakes.com/wp-content/uploads/2023/06/Chocolate-Gelato-Recipe.jpg}} {MatchedProducts:[] MatchedCategory:{Title:Sundaes ImageURL:https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg}}]

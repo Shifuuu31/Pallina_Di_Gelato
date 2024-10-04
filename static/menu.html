@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Styled Menu</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        /* Inline styling (optional) if you want quick edits */
+        .category-section {
+            margin-bottom: 40px; /* Space between category sections */
+        }
+
+        .category-header {
+            background-color: #f5f5f5;
+            padding: 10px;
+            font-size: 1.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+            background-color: #e9e9e9;
+            border-radius: 10px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .product-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-item p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .product-item span {
+            font-weight: bold;
+            color: #ff4081;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/static/images/logo.png" alt="logo" /></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="search-social">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button>
+                    <img src="/static/images/search-icon.png" alt="search icon" class="search-icon" />
+                </button>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="/static/images/facebook.png" alt="facebook"></a>
+                <a href="#"><img src="/static/images/instagram.png" alt="instagram"></a>
+                <a href="#"><img src="/static/images/whatsapp.png" alt="whatsapp"></a>
+                <a href="/geo-localisation"><img src="/static/images/pin.png" alt="geo-localisation"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="categories">
+        <h2>Our Categories</h2>
+    
+        <!-- Loop through each category -->
+        {{range .}}
+        <div class="category-section">
+            <!-- Category name -->
+            <div class="category-header">
+                {{.MatchedCategory.Title}}
+                <details>
+                    <!-- Products grid for this category -->
+            <div class="product-grid">
+                {{range .MatchedProducts}}
+                <div class="product-item">
+                    <img src="{{index .ImageUrls 0}}" alt="{{.Title}}">
+                    <h4>{{.Title}}</h4>
+                    <p>{{.Description}}</p>
+                    <span>${{.Price}}</span>
+                </div>
+                {{else}}
+                <p>No products available in this category.</p>
+                {{end}}
+            </div>
+        </details>
+    </div>
+        </div>
+        {{end}}
+    </section>
+    
+
+    <script>
+        // Add click event to toggle category visibility
+        document.querySelectorAll('.category-header').forEach(item => {
+            item.addEventListener('click', () => {
+                const productGrid = item.nextElementSibling; // Get the next sibling (product grid)
+                productGrid.style.display = productGrid.style.display === 'none' || productGrid.style.display === '' ? 'grid' : 'none'; // Toggle display
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
