@@ -17,5 +17,5 @@ func main() {
 	http.HandleFunc("/geo-localisation", source.GeoLocalisationPageHandler)
 
 	source.Open()
-	http.ListenAndServe(source.Host+source.Port, nil)
+	http.ListenAndServe(source.Port, nil)
 }
