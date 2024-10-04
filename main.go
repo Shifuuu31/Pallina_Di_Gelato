@@ -1,13 +1,11 @@
 package main
 
 import (
+	"github.com/Shifuuu31/Palline_Di_Gelato/source"
 	"net/http"
-
-	"Pallina_Di_Gelato/source"
 )
 
 func main() {
-	
 	http.Handle("/static/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/", source.HomePageHandler)
 	http.HandleFunc("/admin", source.AdminPageHandler)
