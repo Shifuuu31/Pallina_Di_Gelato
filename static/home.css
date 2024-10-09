@@ -78,7 +78,8 @@ header {
 .search-box button img {
     width: 17px;
     height: 17px;
-    filter: invert(60%); /* Change black to white */
+    filter: invert(60%);
+    /* Change black to white */
 }
 
 .social-icons img {
@@ -99,59 +100,91 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 50px auto;
-    max-width: 750px; /* Set maximum width */
-    overflow: hidden; /* Hide overflow */
+    /* margin: 50px auto; */
+    /* max-width: 750px; Set maximum width */
+    max-height: 600px;
+    overflow: hidden;
+    /* Hide overflow */
 }
 
 .slide {
-    position: relative; /* Position for absolute positioning of content */
+    position: relative;
+    /* Position for absolute positioning of content */
     width: 100%;
 }
 
 .slide img {
-    width: 100%; /* Keep the image responsive */
-    max-height: 600px; /* Set maximum height */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for the image */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    position: relative;
+
+    width: 100%;
+    /* Keep the image responsive */
+    height: 600px;
+    /* Set maximum height */
+    object-fit: cover;
+    /* Maintain aspect ratio */
+    /* border-radius: 0px 0px 0px 20px; Rounded corners for the image */
+    /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0))); */
 }
 
 /* Slider Content */
 .slider-content {
-    position: absolute; /* Overlay the content */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    text-align: center; /* Center the text */
-    color: white; /* White text for better contrast */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    padding: 20px; /* Space around the text */
-    border-radius: 10px; /* Rounded corners */
+    position: absolute;
+    width: 100%;
+    /* width: 100%; */
+    /* Overlay the content */
+    top: 40%;
+    /* Center vertically */
+    /* left: 50%;   */
+    /* Center horizontally */
+    /* transform: translate(-50%, -50%); */
+    /* Adjust for centering */
+    text-align: center;
+    /* Center the text */
+    color: white;
+    /* White text for better contrast */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for readability */
+    padding: 20px;
+  
 }
 
 h1 {
-    font-size: 2.5rem; /* Larger font size for title */
-    color: #FF69B4; /* Pink color for the title */
-    margin-bottom: 10px; /* Space below the title */
+    font-size: 2.5rem;
+    /* Larger font size for title */
+    color: #FF69B4;
+    /* Pink color for the title */
+    margin-bottom: 10px;
+    /* Space below the title */
 }
 
 p {
-    font-size: 1.2rem; /* Slightly larger font size for description */
-    margin-bottom: 15px; /* Space below the paragraph */
+    font-size: 1.2rem;
+    /* Slightly larger font size for description */
+    margin-bottom: 15px;
+    /* Space below the paragraph */
 }
 
 .btn {
-    background-color: #fff; /* Button background color */
-    color: #ff69b4; /* Button text color */
-    font-size: 0.8rem; /* Slightly larger font size for description */
-    padding: 10px 20px; /* Button padding */
-    text-decoration: none; /* Remove underline */
-    border-radius: 30px; /* Rounded button corners */
-    transition: background-color 0.3s ease; /* Smooth background transition */
+    background-color: #fff;
+    /* Button background color */
+    color: #ff69b4;
+    /* Button text color */
+    font-size: 0.8rem;
+    /* Slightly larger font size for description */
+    padding: 10px 20px;
+    /* Button padding */
+    text-decoration: none;
+    /* Remove underline */
+    border-radius: 30px;
+    /* Rounded button corners */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
 }
 
 .btn:hover {
-    background-color: #ff69b4; /* Darker shade on hover */
+    background-color: #ff69b4;
+    /* Darker shade on hover */
     color: white;
 }
 
@@ -159,6 +192,7 @@ p {
 .categories {
     text-align: center;
 }
+
 .categories h2 {
     font-size: 2.5rem;
     color: #FF69B4;
@@ -166,7 +200,7 @@ p {
     margin-bottom: 50px;
 }
 
-.category-container {   
+.category-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -193,7 +227,8 @@ p {
 .category-item h3 {
     margin-top: 10px;
     font-size: 18px;
-    color: #FF69B4; /* Pink theme */
+    color: #FF69B4;
+    /* Pink theme */
 }
 
 /* Footer */
