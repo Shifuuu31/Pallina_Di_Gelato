@@ -6,12 +6,12 @@ import (
 )
 
 // const Host string = "localhost"
-var Port string = os.Getenv("PORT")
+var Port string = ":" + os.Getenv("PORT")
 
 func Open() {
 
-	if Port == "" {
-		Port = "8080"
+	if Port == ":" {
+		Port = ":8080"
 	}
 	fmt.Println("server details:")
 	fmt.Println("\tstatus: \033[1m\033[92m• Live\033[0m")
