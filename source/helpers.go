@@ -11,7 +11,7 @@ import (
 )
 
 func LoadProduct() error {
-	const filePath string = "/root/Desktop/Palline_Di_Gelato/product_details.json"
+	const filePath string = "./data/product_details.json"
 	jsonData, err := os.ReadFile(filePath)
 	if err != nil {
 		return err
@@ -26,7 +26,7 @@ func LoadProduct() error {
 
 // saveProductsToFile saves the product data to a JSON file
 func SaveProductsToFile() {
-	const filePath string = "/root/Desktop/Palline_Di_Gelato/product_details.json"
+	const filePath string = "./data/product_details.json"
 	file, err := os.Create(filePath)
 	if err != nil {
 		fmt.Println("Error creating file:", err)
