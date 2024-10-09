@@ -75,7 +75,8 @@ header {
 .search-box button img {
     width: 17px;
     height: 17px;
-    filter: invert(60%); /* Change black to white */
+    filter: invert(60%);
+    /* Change black to white */
 }
 
 .social-icons img {
@@ -90,123 +91,70 @@ header {
     filter: invert(60%);
 }
 
-/* Hero Section Slider */
-.slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: 50px auto;
-    max-width: 750px; /* Set maximum width */
-    overflow: hidden; /* Hide overflow */
-}
 
-.slide {
-    position: relative; /* Position for absolute positioning of content */
-    width: 100%;
-}
-
-.slide img {
-    width: 100%; /* Keep the image responsive */
-    max-height: 750px; /* Set maximum height */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for the image */
-}
-
-/* Slider Content */
-.slider-content {
-    position: absolute; /* Overlay the content */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    text-align: center; /* Center the text */
-    color: white; /* White text for better contrast */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
-    padding: 20px; /* Space around the text */
-    border-radius: 10px; /* Rounded corners */
-}
-
-h1 {
-    font-size: 2.5rem; /* Larger font size for title */
-    color: #FF69B4; /* Pink color for the title */
-    margin-bottom: 10px; /* Space below the title */
-}
-
-p {
-    font-size: 1.2rem; /* Slightly larger font size for description */
-    margin-bottom: 15px; /* Space below the paragraph */
-}
-
-.btn {
-    background-color: #ff4081; /* Button background color */
-    color: white; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    text-decoration: none; /* Remove underline */
-    border-radius: 30px; /* Rounded button corners */
-    transition: background-color 0.3s ease; /* Smooth background transition */
-}
-
-.btn:hover {
-    background-color: #e63946; /* Darker shade on hover */
-}
-
-/* Categories Section */
-.categories {
+/* Hero Section */
+.hero {
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 20px;
+    background-color: #ff69b4;
+    color: white;
 }
 
-.category-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.category-item {
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: white;
+    color: #ff69b4;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff4081;
+    color: white;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 0px 70px;
     text-align: center;
-    width: 150px;
+    margin-bottom: 20px;
 }
 
-.category-item img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+.about-us h2 {
+    font-size: 2rem;
+    color: #FF69B4;
+    margin-top: 50px;
 }
 
-.category-item img:hover {
-    transform: scale(1.1);
+.about-us p {
+    font-size: 1.1rem;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-right: 100px;
+    padding-left: 100px;
 }
 
-.category-item h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #FF69B4; /* Pink theme */
-}
 
 /* Footer */
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: #fff;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .slider {
-        max-width: 100%;
-    }
-
-    .category-container {
-        flex-direction: column;
-        align-items: center;
-    }
 }

@@ -1,0 +1,423 @@
+[
+  {
+    "id": 1,
+    "title": "Vanilla Ice Cream",
+    "description": "Classic vanilla ice cream made with real vanilla beans.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 5.99,
+    "category": "Ice Cream",
+    "publishDate": "12-06-2023",
+    "isNew": false
+  },
+  {
+    "id": 2,
+    "title": "Chocolate Ice Cream",
+    "description": "Rich and creamy chocolate ice cream made with high-quality cocoa.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.49,
+    "category": "Ice Cream",
+    "publishDate": "10-07-2023",
+    "isNew": false
+  },
+  {
+    "id": 3,
+    "title": "Strawberry Ice Cream",
+    "description": "Delicious strawberry ice cream made with fresh strawberries.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 5.99,
+    "category": "Ice Cream",
+    "publishDate": "20-08-2023",
+    "isNew": false
+  },
+  {
+    "id": 4,
+    "title": "Mint Chocolate Chip Ice Cream",
+    "description": "Refreshing mint ice cream loaded with chocolate chips.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Ice Cream",
+    "publishDate": "25-09-2023",
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "title": "Cookies and Cream Ice Cream",
+    "description": "Creamy vanilla ice cream mixed with crunchy chocolate cookies.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.49,
+    "category": "Ice Cream",
+    "publishDate": "30-10-2023",
+    "isNew": false
+  },
+  {
+    "id": 6,
+    "title": "Rocky Road Ice Cream",
+    "description": "Chocolate ice cream with marshmallows and nuts.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.99,
+    "category": "Ice Cream",
+    "publishDate": "05-11-2023",
+    "isNew": false
+  },
+  {
+    "id": 7,
+    "title": "Butter Pecan Ice Cream",
+    "description": "Smooth butter pecan ice cream with roasted pecans.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Ice Cream",
+    "publishDate": "12-12-2023",
+    "isNew": false
+  },
+  {
+    "id": 8,
+    "title": "Frozen Yogurt",
+    "description": "Creamy frozen yogurt with a tangy flavor.",
+    "imageUrls": [
+      "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1029452_10-563fda8.jpg"
+    ],
+    "price": 5.49,
+    "category": "Frozen Yogurt",
+    "publishDate": "01-01-2024",
+    "isNew": false
+  },
+  {
+    "id": 9,
+    "title": "Raspberry Sorbet",
+    "description": "Refreshing raspberry sorbet made with real raspberries.",
+    "imageUrls": [
+      "https://www.lecremedelacrumb.com/wp-content/uploads/2014/06/raspberry-sorbet-1.jpg"
+    ],
+    "price": 4.99,
+    "category": "Sorbet",
+    "publishDate": "15-01-2024",
+    "isNew": false
+  },
+  {
+    "id": 10,
+    "title": "Chocolate Gelato",
+    "description": "Rich and creamy chocolate gelato for chocolate lovers.",
+    "imageUrls": [
+      "https://emmaduckworthbakes.com/wp-content/uploads/2023/06/Chocolate-Gelato-Recipe.jpg"
+    ],
+    "price": 6.49,
+    "category": "Gelato",
+    "publishDate": "20-01-2024",
+    "isNew": false
+  },
+  {
+    "id": 11,
+    "title": "Mint Gelato",
+    "description": "Smooth mint gelato infused with fresh mint leaves.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Gelato",
+    "publishDate": "25-02-2024",
+    "isNew": false
+  },
+  {
+    "id": 12,
+    "title": "Mango Sorbet",
+    "description": "Creamy mango sorbet made with ripe mangoes.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 5.49,
+    "category": "Sorbet",
+    "publishDate": "01-03-2024",
+    "isNew": false
+  },
+  {
+    "id": 13,
+    "title": "Pistachio Ice Cream",
+    "description": "Nutty pistachio ice cream with real pistachio pieces.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.49,
+    "category": "Ice Cream",
+    "publishDate": "15-03-2024",
+    "isNew": false
+  },
+  {
+    "id": 14,
+    "title": "Peanut Butter Cup Ice Cream",
+    "description": "Creamy ice cream with swirls of peanut butter and chocolate cups.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 8.49,
+    "category": "Ice Cream",
+    "publishDate": "30-03-2024",
+    "isNew": false
+  },
+  {
+    "id": 15,
+    "title": "Lemon Sorbet",
+    "description": "Zesty lemon sorbet that's perfect for hot days.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 4.99,
+    "category": "Sorbet",
+    "publishDate": "01-04-2024",
+    "isNew": false
+  },
+  {
+    "id": 16,
+    "title": "Caramel Swirl Ice Cream",
+    "description": "Rich caramel ice cream with delicious caramel swirls.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.99,
+    "category": "Ice Cream",
+    "publishDate": "15-04-2024",
+    "isNew": false
+  },
+  {
+    "id": 17,
+    "title": "Tiramisu Gelato",
+    "description": "Decadent tiramisu gelato infused with coffee and mascarpone.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 8.49,
+    "category": "Gelato",
+    "publishDate": "20-04-2024",
+    "isNew": false
+  },
+  {
+    "id": 18,
+    "title": "Coconut Ice Cream",
+    "description": "Creamy coconut ice cream made with real coconut milk.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Ice Cream",
+    "publishDate": "25-05-2024",
+    "isNew": false
+  },
+  {
+    "id": 19,
+    "title": "Hazelnut Gelato",
+    "description": "Nutty hazelnut gelato with a creamy texture.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.49,
+    "category": "Gelato",
+    "publishDate": "01-06-2024",
+    "isNew": false
+  },
+  {
+    "id": 20,
+    "title": "Birthday Cake Ice Cream",
+    "description": "Celebration ice cream with cake batter and sprinkles.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.99,
+    "category": "Ice Cream",
+    "publishDate": "15-06-2024",
+    "isNew": false
+  },
+  {
+    "id": 21,
+    "title": "Maple Walnut Ice Cream",
+    "description": "Delicious maple ice cream with crunchy walnut pieces.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Ice Cream",
+    "publishDate": "01-07-2024",
+    "isNew": false
+  },
+  {
+    "id": 22,
+    "title": "Cherry Garcia Ice Cream",
+    "description": "Cherry ice cream with chocolate flakes and cherries.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.49,
+    "category": "Ice Cream",
+    "publishDate": "15-07-2024",
+    "isNew": false
+  },
+  {
+    "id": 23,
+    "title": "Green Tea Ice Cream",
+    "description": "Smooth ice cream infused with green tea for a unique flavor.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.99,
+    "category": "Ice Cream",
+    "publishDate": "01-08-2024",
+    "isNew": false
+  },
+  {
+    "id": 24,
+    "title": "Banana Split Ice Cream",
+    "description": "Classic banana split ice cream topped with fruits and syrup.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 8.49,
+    "category": "Ice Cream",
+    "publishDate": "15-08-2024",
+    "isNew": false
+  },
+  {
+    "id": 25,
+    "title": "Carrot Cake Ice Cream",
+    "description": "Delicious carrot cake ice cream with spices and frosting swirls.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.99,
+    "category": "Ice Cream",
+    "publishDate": "01-09-2024",
+    "isNew": false
+  },
+  {
+    "id": 26,
+    "title": "Pineapple Coconut Sorbet",
+    "description": "Refreshing pineapple coconut sorbet, perfect for summer.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 5.49,
+    "category": "Sorbet",
+    "publishDate": "15-09-2024",
+    "isNew": false
+  },
+  {
+    "id": 27,
+    "title": "Almond Joy Ice Cream",
+    "description": "Chocolate ice cream with almonds and coconut flakes.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 8.49,
+    "category": "Ice Cream",
+    "publishDate": "01-10-2024",
+    "isNew": false
+  },
+  {
+    "id": 28,
+    "title": "Chai Latte Ice Cream",
+    "description": "Spicy chai latte ice cream for a unique dessert experience.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.99,
+    "category": "Ice Cream",
+    "publishDate": "15-10-2024",
+    "isNew": false
+  },
+  {
+    "id": 29,
+    "title": "French Vanilla Ice Cream",
+    "description": "Rich and creamy French vanilla ice cream.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 6.49,
+    "category": "Ice Cream",
+    "publishDate": "01-11-2024",
+    "isNew": false
+  },
+  {
+    "id": 30,
+    "title": "Toasted Marshmallow Ice Cream",
+    "description": "Delicious toasted marshmallow ice cream with a smoky flavor.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 7.49,
+    "category": "Ice Cream",
+    "publishDate": "15-11-2024",
+    "isNew": false
+  },
+  {
+    "id": 31,
+    "title": "Strawberry Cheesecake Ice Cream",
+    "description": "Creamy strawberry cheesecake ice cream with graham cracker swirls.",
+    "imageUrls": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s"
+    ],
+    "price": 8.49,
+    "category": "Ice Cream",
+    "publishDate": "01-12-2024",
+    "isNew": false
+  },
+  {
+    "id": 32,
+    "title": "Product #01",
+    "description": "Product01 Descrption",
+    "imageUrls": [
+      "mainImage.png",
+      "image.png",
+      "image.png",
+      "image.png",
+      "image.png"
+    ],
+    "price": 50.98,
+    "category": "Ice Cream",
+    "publishDate": "12-06-2023",
+    "isNew": false
+  },
+  {
+    "id": 33,
+    "title": "Product #02",
+    "description": "Product02 Descrption",
+    "imageUrls": [
+      "mainImage.png",
+      "image.png",
+      "image.png",
+      "image.png",
+      "image.png"
+    ],
+    "price": 71.95,
+    "category": "Gelato",
+    "publishDate": "18-09-2023",
+    "isNew": false
+  },
+  {
+    "id": 33,
+    "title": "edde",
+    "description": "dedeed",
+    "imageUrls": [
+      "static/uploads/116126000.jfif",
+      "static/uploads/Capture.PNG",
+      "static/uploads/macos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg",
+      "static/uploads/Untitled 3.png",
+      "static/uploads/Untitled.png",
+      "static/uploads/Untitled2.png"
+    ],
+    "price": 2222,
+    "category": "Ice Cream",
+    "publishDate": "2024-10-01",
+    "isNew": false
+  }
+]

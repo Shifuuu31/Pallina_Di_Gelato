@@ -13,6 +13,9 @@ body {
 
 /* Header */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,7 +111,7 @@ header {
 
 .slide img {
     width: 100%; /* Keep the image responsive */
-    max-height: 750px; /* Set maximum height */
+    max-height: 600px; /* Set maximum height */
     object-fit: cover; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners for the image */
 }
@@ -138,8 +141,9 @@ p {
 }
 
 .btn {
-    background-color: #ff4081; /* Button background color */
-    color: white; /* Button text color */
+    background-color: #fff; /* Button background color */
+    color: #ff69b4; /* Button text color */
+    font-size: 0.8rem; /* Slightly larger font size for description */
     padding: 10px 20px; /* Button padding */
     text-decoration: none; /* Remove underline */
     border-radius: 30px; /* Rounded button corners */
@@ -147,16 +151,22 @@ p {
 }
 
 .btn:hover {
-    background-color: #e63946; /* Darker shade on hover */
+    background-color: #ff69b4; /* Darker shade on hover */
+    color: white;
 }
 
 /* Categories Section */
 .categories {
     text-align: center;
-    padding: 50px 0;
+}
+.categories h2 {
+    font-size: 2.5rem;
+    color: #FF69B4;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.category-container {
+.category-container {   
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -188,6 +198,7 @@ p {
 
 /* Footer */
 footer {
+    margin-top: 100px;
     text-align: center;
     padding: 20px;
     background-color: #333;

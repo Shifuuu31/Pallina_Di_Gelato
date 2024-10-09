@@ -183,7 +183,11 @@ p {
     padding: 10px; /* Space around the text */
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Shadow for items */
 }
-
+.categories h2 {
+    font-size: 2rem;
+    color: #FF69B4;
+    margin-top: 50px;
+}
 .category-item img {
     width: 100px; /* Set width for category images */
     height: 100px; /* Set height for category images */
@@ -285,4 +289,16 @@ p {
     padding: 10px;
     background-color: #f0f0f0;
     font-weight: bold;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
 }

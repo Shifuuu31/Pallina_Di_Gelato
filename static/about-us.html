@@ -4,64 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Pallina De Gelato</title>
-    <link rel="stylesheet" href="/static/about-us.css">
-     
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>2024 Styled Website</title>
-        <link rel="stylesheet" href="/static/home.css">
-       
-    </head>
-    
-    <body>
-        <header>
-            <div class="logo">
-                <a href="/"><img src="/static/images/logo.png" alt="logo" /></a>
+    <link rel="stylesheet" href="/static/about-us.css"> <!-- Link to your existing CSS file -->
+   
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="/static/images/logo.png" alt="logo" /></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="search-social">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button>
+                    <img src="/static/images/large-size/search-icon.png" alt="search icon" class="search-icon" />
+                </button>
             </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/menu">Menu</a></li>
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="contact-us">Contact Us</a></li>
-                </ul>
-            </nav>
-            <div class="search-social">
-                <div class="search-box">
-                    <input type="text" placeholder="Search">
-                    <button>
-                        <img src="/static/images/search-icon.png" alt="search icon" class="search-icon" />
-                    </button>
-                </div>
-                
-                <div class="social-icons">
-                    <a href="#"><img src="/static/images/facebook.png" alt="facebook"></a>
-                    <a href="#"><img src="/static/images/instagram.png" alt="instagram"></a>
-                    <a href="#"><img src="/static/images/whatsapp.png" alt="whatsapp"></a>
-                    <a href="/geo-localisation"><img src="/static/images/pin.png" alt="geo-localisation"></a>
-                </div>
+            
+            <div class="social-icons">
+                <a href="https://www.facebook.com/p/Pallina-di-Gelato-100063551013926/" target="_blank"><img src="/static/images/large-size/facebook.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/pallina_di_gelato_/?hl=en" target="_blank"><img src="/static/images/large-size/instagram.png" alt="instagram"></a>
+                <a href="https://wa.me/0777777547" target="_blank"><img src="/static/images/large-size/whatsapp.png" alt="whatsapp"></a>
+                <a href="/geo-localisation"><img src="/static/images/large-size/pin.png" alt="geo-localisation"></a>
             </div>
-        </header>
-    
-        
-        
-        
-        <section class="categories">
-            <h2>Our Categories</h2>
-            <div class="category-container">
-                {{range .}}
-                <div class="category-item">
-                    <img src="{{.ImageURL}}" alt="{{.Title}}">
-                    <h3>{{.Title}}</h3>
-                </div>
-                {{end}}
-            </div>
-        </section>
-    
+        </div>
+    </header>
+
 
     <!-- About Us Section -->
     <section class="about-us">
@@ -76,24 +52,12 @@
             beloved local brand with a growing community of loyal customers. Join us on this sweet journey and enjoy the 
             most exquisite gelato, pastries, and desserts.
         </p>
-        <h3>Our Values</h3>
-        <ul>
-            <li>Commitment to quality</li>
-            <li>Fresh, locally sourced ingredients</li>
-            <li>Creativity and innovation in every recipe</li>
-            <li>Customer-first approach</li>
-        </ul>
-        <h3>Our Team</h3>
-        <p>
-            We are a group of passionate chefs, bakers, and food enthusiasts who take pride in crafting the best desserts 
-            for you. From our kitchen to your table, we ensure that each creation is made with love and dedication.
-        </p>
+        <a href="/contact-us" class="cta-button">Get in Touch</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Pallina De Gelato. All rights reserved.</p>
     </footer>
-
 </body>
 </html>

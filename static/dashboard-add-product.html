@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Settings</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container to fill the whole page */
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+        }
+
+        /* Hidden Sidebar */
+        .sidebar.hidden {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .sidebar .logo {
+            margin-bottom: 50px;
+        }
+
+        /* Buttons section */
+        .sidebar .buttons {
+            margin-top: 5px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .sidebar button:hover {
+            background-color: #ff4081;
+            transform: scale(1.05);
+        }
+
+        .sidebar button:active {
+            transform: scale(0.98);
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: margin-left 0.3s ease;
+        }
+
+        .main-content.full {
+            margin-left: 0;
+        }
+
+        .form-container {
+            flex: 1;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .form-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ff69b4;
+            text-align: center;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #ff69b4;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .submit-button,
+        .reset-button {
+            grid-column: span 2;
+            padding: 15px;
+            background-color: #ff69b4;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover,
+        .reset-button:hover {
+            background-color: #ff4081;
+        }
+
+        .gallery-container {
+            margin-top: 30px;
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            color: #ff69b4;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+        }
+
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                padding-top: 75%;
+            }
+        }
+
+        /* Hide/Show Sidebar Button */
+        .toggle-btn {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 25px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .toggle-btn img {
+            width: 20px;
+        }
+
+        /* User icon */
+        .user-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .user-icon img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hide/Show Sidebar Button -->
+    <button class="toggle-btn" id="toggleSidebar">
+        <img id="toggleIcon" src="/static/images/large-size/hide.png" alt="Toggle Sidebar">
+    </button>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <a href="/">
+                    <img src="/static/images/logo.png" alt="Logo" width="100">
+                </a>
+            </div>
+            <div class="buttons">
+                <a href="/admin/dashboard/add/product"><button aria-label="Add Product">Add Product</button></a>
+                <a href="/admin/dashboard/delete/product"><button aria-label="Delete Product">Delete
+                        Product</button></a>
+                <a href="/admin/dashboard/edit/product"><button aria-label="Edit Product">Edit Product</button></a>
+                <a href="/admin/dashboard/add/category"><button aria-label="Add Category">Add Category</button></a>
+                <a href="/admin/dashboard/delete/category"><button aria-label="Delete Category">Delete
+                        Category</button></a>
+                <a href="/admin/dashboard/edit/category"><button aria-label="Edit Category">Edit Category</button></a>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h1 class="form-title">Add New Product</h1>
+            <form id="productForm" action="/admin/dashboard/add/" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="Ice Cream">Ice Cream</option>
+                        <option value="Frozen Yogurt">Frozen Yogurt</option>
+                        <option value="Sorbet">Sorbet</option>
+                        <option value="Gelato">Gelato</option>
+                        <option value="Sundaes">Sundaes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="publishDate">Publish Date:</label>
+                    <input type="date" id="publishDate" name="publishDate" required>
+                </div>
+                <div class="form-group">    
+                    <label for="isNew">Is New?</label>
+                    <input type="checkbox" id="isNew" name="isNew" value="true">
+                </div>
+                <div class="form-group">
+                    <label for="images">Product Images:</label>
+                    <input type="file" id="images" name="images" accept="image/*" multiple required>
+                </div>
+                <input type="submit" value="Add Product" class="submit-button">
+                <button type="button" class="reset-button" id="resetForm">Reset Fields</button>
+            </form>
+
+            <div class="gallery-container">
+                <h2 class="gallery-title">Uploaded Images:</h2>
+                <div class="gallery-grid" id="gallery"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleSidebar = document.getElementById("toggleSidebar");
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.querySelector(".main-content");
+        const toggleIcon = document.getElementById("toggleIcon");
+
+        toggleSidebar.addEventListener("click", () => {
+            sidebar.classList.toggle("hidden");
+            mainContent.classList.toggle("full");
+            toggleIcon.src = sidebar.classList.contains("hidden") ? "/static/images/large-size/show.png" : "/static/images/large-size/hide.png";
+        });
+
+        // Reset form fields
+        document.getElementById("resetForm").addEventListener("click", () => {
+            document.getElementById("productForm").reset(); // Resets all form fields to their initial values
+            document.getElementById("gallery").innerHTML = ''; // Clear the image gallery
+        });
+
+        // Handle image preview
+        const imagesInput = document.getElementById("images");
+        imagesInput.addEventListener("change", function () {
+            const gallery = document.getElementById("gallery");
+            gallery.innerHTML = ''; // Clear previous images
+            const files = this.files;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const img = document.createElement("img");
+                img.src = URL.createObjectURL(file);
+                img.classList.add("gallery-item");
+                const div = document.createElement("div");
+                div.classList.add("gallery-item");
+                div.appendChild(img);
+                gallery.appendChild(div);
+            }
+        });
+    </script>
+</body>
+
+</html>
