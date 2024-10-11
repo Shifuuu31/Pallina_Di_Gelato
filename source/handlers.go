@@ -40,22 +40,7 @@ var (
 	mutex      sync.Mutex // Protect shared resources
 )
 
-func main() {
-	// Define the routes
-	http.HandleFunc("/", HomePageHandler)
-	http.HandleFunc("/admin", AdminPageHandler)
-	http.HandleFunc("/admin/dashboard", AdminDashboardPageHandler)
-	http.HandleFunc("/admin/dashboard/add/", AddingHandler)
-	http.HandleFunc("/admin/dashboard/add/product", AddNewProductPageHandler)
-	http.HandleFunc("/menu", MenuPageHandler)
-	http.HandleFunc("/about-us", AboutUsPageHandler)
-	http.HandleFunc("/product", ProductPageHandler)
-	http.HandleFunc("/contact-us", ContactUsPageHandler)
-	http.HandleFunc("/geo-localisation", GeoLocalisationPageHandler)
 
-	// Start the server
-	http.ListenAndServe(":8080", nil)
-}
 
 // renderTemplate is a utility function to execute a template
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
@@ -85,7 +70,7 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 		{Title: "Sundaes", ImageURL: "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg"},
 	}
 
-	renderTemplate(w, "./static/home.html", &Categories)
+	renderTemplate(w, "./static/home/home.html", &Categories)
 }
 
 // AdminPageHandler handles requests for the admin page
@@ -95,7 +80,7 @@ func AdminPageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	renderTemplate(w, "./static/admin.html", nil)
+	renderTemplate(w, "./static/admin/admin.html", nil)
 }
 
 // AdminDashboardPageHandler handles requests for the admin dashboard
@@ -105,7 +90,7 @@ func AdminDashboardPageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	renderTemplate(w, "./static/dashboard.html", nil)
+	renderTemplate(w, "./static/dashboard/dashboard.html", nil)
 }
 
 // AddNewProductPageHandler handles product addition requests
@@ -116,7 +101,7 @@ func AddNewProductPageHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	NewProduct = PProfile{} // Reset NewProduct
-	renderTemplate(w, "./static/dashboard-add-product.html", NewProduct.ImageUrls)
+	renderTemplate(w, "./static/add-product/add-product.html", NewProduct.ImageUrls)
 	// http.re
 }
 
@@ -194,7 +179,7 @@ func MenuPageHandler(w http.ResponseWriter, r *http.Request) {
 
 	parsedCategories := createCategoryProducts()
 
-	renderTemplate(w, "./static/menu.html", &parsedCategories)
+	renderTemplate(w, "./static/menu/menu.html", &parsedCategories)
 }
 
 // createCategoryProducts organizes products into categories
@@ -219,11 +204,15 @@ func AboutUsPageHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// You can add specific data here for the "About Us" page if needed
-	renderTemplate(w, "./static/about-us.html", nil)
+	renderTemplate(w, "./static/about-us/about-us.html", nil)
 }
 
 // ProductPageHandler handles requests for individual product pages
 func ProductPageHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/menu/product" {
+		http.Error(w, "404 Page Not Found", http.StatusNotFound)
+		return
+	}
 	productIDStr := r.URL.Query().Get("id")
 	if productIDStr == "" {
 		http.Error(w, "Product ID not specified", http.StatusBadRequest)
@@ -252,7 +241,7 @@ func ProductPageHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Render the product page template with the selected product data
-	renderTemplate(w, "./static/product.html", selectedProduct)
+	renderTemplate(w, "./static/product/product.html", selectedProduct)
 }
 
 // ContactUsPageHandler handles requests for the "Contact Us" page
@@ -263,16 +252,16 @@ func ContactUsPageHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Render the contact us page template
-	renderTemplate(w, "./static/contact-us.html", nil)
+	renderTemplate(w, "./static/contact-us/contact-us.html", nil)
 }
 
-// GeoLocalisationPageHandler handles requests for the "Geo Localisation" page
-func GeoLocalisationPageHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/geo-localisation" {
+// FindUsPageHandler handles requests for the "Geo Localisation" page
+func FindUsPageHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/find-us" {
 		http.Error(w, "404 Page Not Found", http.StatusNotFound)
 		return
 	}
 
 	// You can add specific data for the Geo Localisation page here if needed
-	renderTemplate(w, "./static/geo-localisation.html", nil)
+	renderTemplate(w, "./static/find-us/find-us.html", nil)
 }

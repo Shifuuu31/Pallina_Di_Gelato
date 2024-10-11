@@ -21,7 +21,7 @@ func main() {
 	http.HandleFunc("/menu/product", source.ProductPageHandler)
 	http.HandleFunc("/about-us", source.AboutUsPageHandler)
 	http.HandleFunc("/contact-us", source.ContactUsPageHandler)
-	http.HandleFunc("/geo-localisation", source.GeoLocalisationPageHandler)
+	http.HandleFunc("/find-us", source.FindUsPageHandler)
 	if err := source.LoadProduct(); err!= nil {
 		println(err)
 	}
