@@ -1,0 +1,36 @@
+[
+    {
+        "title": "Ice Cream",
+        "description": "",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjZ5QpVr0Yq0taYNdA7vg1AfD7KUfEbk_NXQ&s",
+        "creationDate": "2024-08-16 15:04:06"
+    },
+    {
+        "title": "Frozen Yogurt",
+        "description": "",
+        "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1029452_10-563fda8.jpg",
+        "creationDate": "2024-08-16 15:04:10",
+        "deletedCategory": false
+    },
+    {
+        "title": "Sorbet",
+        "description": "",
+        "imageUrl": "https://www.lecremedelacrumb.com/wp-content/uploads/2014/06/raspberry-sorbet-1.jpg",
+        "creationDate": "2024-08-16 15:04:09",
+        "deletedCategory": false
+    },
+    {
+        "title": "Gelato",
+        "description": "",
+        "imageUrl": "https://emmaduckworthbakes.com/wp-content/uploads/2023/06/Chocolate-Gelato-Recipe.jpg",
+        "creationDate": "2024-08-16 15:04:00",
+        "deletedCategory": false
+    },
+    {
+        "title": "Sundaes",
+        "description": "",
+        "imageUrl": "https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg",
+        "creationDate": "2024-08-16 15:04:59",
+        "deletedCategory": false
+    }
+]

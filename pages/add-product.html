@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Settings - Add Product</title>
+    <link rel="stylesheet" href="/assets/css/add-product.css">
+</head>
+
+<body>
+    <!-- Hide/Show Sidebar Button -->
+    <button class="toggle-btn" id="toggleSidebar">
+        <img id="toggleIcon" src="/assets/images/large-size/hide.png" alt="Toggle Sidebar">
+    </button>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <a href="/dashboard">
+                    <img src="/assets/images/logo.png" alt="Logo" width="100">
+                </a>
+            </div>
+            <div class="buttons">
+                <a href="/dashboard/add/product"><button aria-label="Add Product">Add Product</button></a>
+                <a href="/dashboard/delete/product"><button aria-label="Delete Product">Delete Product</button></a>
+                <a href="/dashboard/edit/product"><button aria-label="Edit Product">Edit Product</button></a>
+                <a href="/dashboard/add/category"><button aria-label="Add Category">Add Category</button></a>
+                <a href="/dashboard/delete/category"><button aria-label="Delete Category">Delete Category</button></a>
+                <a href="/dashboard/edit/category"><button aria-label="Edit Category">Edit Category</button></a>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h1 class="form-title">Add New Product</h1>
+            <!-- Display the success/failure message -->
+            {{ if . }}
+            <div class="message-box">
+                <p>{{ . }}</p>
+            </div>
+            {{ end }}
+            <form id="productForm" action="/dashboard/add-product" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Ice Cream">Ice Cream</option>
+                        <option value="Frozen Yogurt">Frozen Yogurt</option>
+                        <option value="Sorbet">Sorbet</option>
+                        <option value="Gelato">Gelato</option>
+                        <option value="Sundaes">Sundaes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="isNew">Is New?</label>
+                    <input type="checkbox" id="isNew" name="isNew" value="true">
+                </div>
+                <div class="form-group">
+                    <label for="isVisible">Visible to Customers?</label>
+                    <input type="checkbox" id="isVisible" name="isVisible" value="true" checked>
+                </div>                
+
+                <div class="form-group">
+                    <label for="file-input">Upload Images:</label>
+                    <input type="file" id="file-input" name="images" accept="image/png, image/jpeg" multiple required onchange="preview()">
+                    <p id="num-of-files">No Files Chosen</p>
+                    <div id="UploadedImages" class="UploadedImages"></div>
+                </div>
+                <div class="form-group">
+                    <label for="publishDate">Publish Date:</label>
+                    <input type="datetime-local" id="publishDate" name="publishDate" required>
+                </div>
+                
+                <input type="submit" value="Add Product" class="submit-button">
+                <button type="button" class="reset-button" id="resetForm">Reset Fields</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sidebar Toggle Script -->
+    <script>
+        const toggleSidebar = document.getElementById("toggleSidebar");
+        const sidebar = document.getElementById("sidebar");
+        const toggleIcon = document.getElementById("toggleIcon");
+
+        toggleSidebar.addEventListener("click", () => {
+            sidebar.classList.toggle("hidden");
+            toggleIcon.src = sidebar.classList.contains("hidden") ? "/assets/images/large-size/hide.png" : "/assets/images/large-size/hide.png";
+        });
+
+        // Reset form fields
+        document.getElementById("resetForm").addEventListener("click", () => {
+            document.getElementById("productForm").reset(); // Resets all form fields to their initial values
+            document.getElementById("UploadedImages").innerHTML = ''; // Clear the image gallery
+            document.getElementById("num-of-files").textContent = 'No Files Chosen'; // Reset file count text
+        });
+    </script>
+
+    <!-- Image Preview Script -->
+    <script>
+        function preview() {
+            const fileInput = document.getElementById("file-input");
+            const imageContainer = document.getElementById("UploadedImages");
+            const numOfFiles = document.getElementById("num-of-files");
+
+            imageContainer.innerHTML = ""; // Clear previous images
+            numOfFiles.textContent = `${fileInput.files.length} Files Selected`;
+
+            for (const file of fileInput.files) {
+                const reader = new FileReader();
+                const figure = document.createElement("figure");
+                const figCap = document.createElement("figcaption");
+                figCap.innerText = file.name;
+                figure.appendChild(figCap);
+
+                reader.onload = function () {
+                    const img = document.createElement("img");
+                    img.src = reader.result;
+                    img.alt = file.name; // Add alt attribute for accessibility
+                    img.style.maxWidth = "100px"; // Restrict image preview size for better display
+                    img.style.maxHeight = "100px"; // Restrict image preview size
+                    figure.insertBefore(img, figCap);
+                };
+
+                reader.readAsDataURL(file);
+                imageContainer.appendChild(figure);
+            }
+        }
+    </script>
+</body>
+
+</html>

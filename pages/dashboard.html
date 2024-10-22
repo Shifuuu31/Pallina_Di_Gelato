@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Settings</title>
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Hide/Show Sidebar Button -->
+    <button class="toggle-btn" id="toggleSidebar">
+        <img id="toggleIcon" src="/assets/images/large-size/hide.png" alt="Toggle Sidebar" style="width: 20px;">
+    </button>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <a href="/dashboard">
+                <img src="/assets/images/logo.png" alt="Logo" width="100">
+            </a>
+            
+                
+            </div>
+            <div class="buttons">
+                <a href="/dashboard/add/product">
+                    <button aria-label="Add Product">Add Product</button>
+                </a>
+                <a href="/dashboard/delete/product">
+                    <button aria-label="Delete Product">Delete Product</button>
+                </a>
+                <a href="/dashboard/edit/product">
+                    <button aria-label="edit Product">Edit Product</button>
+                </a>
+                <a href="/dashboard/add/category">
+                    <button aria-label="Add Category">Add Category</button>
+                </a>
+                <a href="/dashboard/delete/category">
+                    <button aria-label="Delete Category">Delete Category</button>
+                </a>
+                <a href="/dashboard/edit/category">
+                    <button aria-label="edit Category">Edit Category</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <div class="welcome-text">
+                <img src="/assets/images/large-size/usher.png" alt="User" style="width: 150px;">
+                <h1>Welcome<br>to your store settings</h1>
+            </div>
+        </div>
+
+        <!-- User Icon (Top Right) -->
+        <div class="user-icon">
+            <img src="/assets/images/large-size/logout.png" alt="User">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the sidebar visibility
+        const toggleBtn = document.getElementById('toggleSidebar');
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleIcon = document.getElementById('toggleIcon'); // Get the image element
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('full');
+
+            // Update the image source based on the sidebar state
+            if (sidebar.classList.contains('hidden')) {
+                toggleIcon.src = "/assets/images/large-size/hide.png"; // Image when sidebar is hidden
+            } else {
+                toggleIcon.src = "/assets/images/large-size/hide.png"; // Image when sidebar is visible
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+#########-backend completed-########
+
+About us
+
+
+#########-Working on-########
+
+Public
+
+Header
+    -search bar
+
+Home Page
+    -newest Product
+    -link categories with their details at the menu
+    -enhance ui
+
+Menu Page
+    -enhance ui
+
+Product Page
+    -enhance ui
+
+Contact Us Page 
+    -link contact us form with admin dashboard
+
+
+
+/project-root
+    /assets
+        /css
+            style.css  # your custom CSS file
+        /js
+            script.js  # JavaScript files for dynamic interactions
+        /images
+            logo.png   # images used in your site
+    /templates
+        index.html     # main template
+        about.html     # other HTML templates
+    /static
+        /uploads       # if you're handling user-uploaded content
+    /server
+        main.go        # Go code to handle routing and logic
+    go.mod            # Go module file
+    go.sum            # Go dependencies file
+
+

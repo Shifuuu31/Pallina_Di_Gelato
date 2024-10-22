@@ -1,1 +1,1 @@
-cmd.exe /c start "http://localhost:8080" &
+"/mnt/c/Program\ Files/Firefox\ Developer\ Edition/firefox.exe" "http://localhost:8080" &
