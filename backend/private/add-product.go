@@ -8,8 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend"
-	"github.com/google/uuid"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend"
 )
 
 // AddNewProductPageHandler handles product addition requests
@@ -31,7 +30,7 @@ func AddingHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// Parse product data and generate unique ID
-		backend.NewProduct.ID = generateUniqueProductID()
+		backend.NewProduct.ID = backend.GenerateUniqueProductID()
 		backend.NewProduct.Title = r.FormValue("productName")
 		backend.NewProduct.Description = r.FormValue("description")
 		price, err := strconv.ParseFloat(r.FormValue("price"), 64)
@@ -46,8 +45,8 @@ func AddingHandler(w http.ResponseWriter, r *http.Request) {
 			backend.RenderTemplate(w, backend.Template, "add-product.html", fmt.Sprintf("Error parsing time: %v", err))
 			return
 		}
-		backend.NewProduct.PublishDate = parsedTime.Format("2006-01-02 15:04:05")
-		backend.NewProduct.CreationDate = time.Now().Format("2006-01-02 15:04:05")
+		backend.NewProduct.PublishDate = parsedTime.Format("02-01-2006 00:00:00")
+		backend.NewProduct.CreationDate = time.Now().Format("02-01-2006 00:00:00")
 		backend.NewProduct.IsNew = r.FormValue("isNew") == "true"
 		backend.NewProduct.IsVisible = r.FormValue("isVisible") == "true" // Set visibility based on checkbox
 
@@ -92,28 +91,4 @@ func AddingHandler(w http.ResponseWriter, r *http.Request) {
 	backend.NewProduct = backend.PProfile{} // Reset NewProduct
 
 	http.Redirect(w, r, "/dashboard/add/product", http.StatusSeeOther)
-}
-
-func generateUniqueProductID() string {
-	var newID string
-	exists := true
-
-	for exists {
-		newID = uuid.New().String()
-		exists = checkDuplicateID(newID)
-	}
-	return newID
-}
-
-// Checks if the generated ID already exists in the product list
-func checkDuplicateID(id string) bool {
-	backend.Mutex.Lock()
-	defer backend.Mutex.Unlock()
-
-	for _, product := range backend.Products {
-		if product.ID == id {
-			return true
-		}
-	}
-	return false
 }

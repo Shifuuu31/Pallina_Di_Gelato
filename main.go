@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend"
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend/private"
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend/public"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend/private"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend/public"
 )
 
 func StaticHandler(w http.ResponseWriter, r *http.Request) {
@@ -25,8 +25,6 @@ func StaticHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	
-
 	http.HandleFunc("/assets/", StaticHandler)
 
 	http.HandleFunc("/login", private.LoginPageHandler)
@@ -45,6 +43,7 @@ func main() {
 	http.HandleFunc("/menu/product", public.ProductPageHandler)
 	http.HandleFunc("/about-us", public.AboutUsPageHandler)
 	http.HandleFunc("/contact-us", public.ContactUsPageHandler)
+	http.HandleFunc("/submit-contact-form", public.SubmitForm)
 	http.HandleFunc("/find-us", public.FindUsPageHandler)
 
 	// tt()

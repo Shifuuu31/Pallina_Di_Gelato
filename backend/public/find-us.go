@@ -3,7 +3,7 @@ package public
 import (
 	"net/http"
 
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend"
 )
 
 // FindUsPageHandler handles requests for the "Geo Localisation" page

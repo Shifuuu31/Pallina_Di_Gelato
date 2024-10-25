@@ -3,7 +3,7 @@ package private
 import (
 	"net/http"
 
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend"
 )
 
 func DeleteCategory(w http.ResponseWriter, r *http.Request) {

@@ -3,10 +3,8 @@ package public
 import (
 	"net/http"
 
-	"github.com/Shifuuu31/Palline_Di_Gelato/backend"
+	"github.com/Shifuuu31/Pallina_Di_Gelato/backend"
 )
-
-
 
 // HomePageHandler handles requests for the homepage
 func HomePageHandler(w http.ResponseWriter, r *http.Request) {
@@ -15,5 +13,5 @@ func HomePageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	backend.RenderTemplate(w, backend.Template ,"home.html", &backend.Categories)
+	backend.RenderTemplate(w, backend.Template, "home.html", &backend.Categories)
 }

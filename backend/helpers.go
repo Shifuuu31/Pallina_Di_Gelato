@@ -10,17 +10,19 @@ import (
 	"path/filepath"
 	"strings"
 	"text/template"
+
+	"github.com/google/uuid"
 )
 
 // RenderTemplate renders a template and handles any errors.
 func RenderTemplate(w http.ResponseWriter, tmpl *template.Template, filename string, data interface{}) {
-    w.Header().Set("Content-Type", "text/html")
+	w.Header().Set("Content-Type", "text/html")
 
-    err := tmpl.ExecuteTemplate(w, filename, data)
-    if err != nil {
-        http.Error(w, "Error rendering template: "+err.Error(), http.StatusInternalServerError)
-        return // Make sure to return to prevent further writes
-    }
+	err := tmpl.ExecuteTemplate(w, filename, data)
+	if err != nil {
+		http.Error(w, "Error rendering template: "+err.Error(), http.StatusInternalServerError)
+		return // Make sure to return to prevent further writes
+	}
 }
 
 func LoadProducts() error {
@@ -99,4 +101,28 @@ func SaveUploadedFile(fileHeader *multipart.FileHeader, uploadDir string) error 
 		return fmt.Errorf("failed to save the file: %v", err)
 	}
 	return nil
+}
+
+func GenerateUniqueProductID() string {
+	var newID string
+	exists := true
+
+	for exists {
+		newID = uuid.New().String()
+		exists = checkDuplicateID(newID)
+	}
+	return newID
+}
+
+// Checks if the generated ID already exists in the product list
+func checkDuplicateID(id string) bool {
+	Mutex.Lock()
+	defer Mutex.Unlock()
+
+	for _, product := range Products {
+		if product.ID == id {
+			return true
+		}
+	}
+	return false
 }
